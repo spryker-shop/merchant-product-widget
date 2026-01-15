@@ -6,6 +6,7 @@
     productView: _widget.productView,
     isRadioButtonVisible: _widget.isRadioButtonVisible,
     isChecked: _widget.isChecked,
+    pageReload: true,
 } %}
 
 {% block template %}
@@ -29,6 +30,7 @@
                                     price: data.merchantProductView.price.price | default(null),
                                     currencyIsoCode: data.merchantProductView.price.currency.code | default(null),
                                     isRadioButtonVisible: data.isRadioButtonVisible,
+                                    pageReload: data.pageReload,
                                 },
                                 embed : {
                                     currentProductPrice: data.merchantProductView.price,
