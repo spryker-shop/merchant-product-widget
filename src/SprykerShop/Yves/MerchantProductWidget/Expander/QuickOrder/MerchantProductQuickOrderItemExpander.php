@@ -17,20 +17,11 @@ class MerchantProductQuickOrderItemExpander implements MerchantProductQuickOrder
      */
     protected $merchantProductReader;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductWidget\Reader\MerchantProductReaderInterface $merchantProductReader
-     */
     public function __construct(MerchantProductReaderInterface $merchantProductReader)
     {
         $this->merchantProductReader = $merchantProductReader;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param string $locale
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function expandItem(ItemTransfer $itemTransfer, string $locale): ItemTransfer
     {
         /** @var string $sku */

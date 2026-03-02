@@ -61,13 +61,6 @@ class MerchantProductReader implements MerchantProductReaderInterface
      */
     protected $merchantProductWidgetMapper;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToProductStorageClientInterface $productStorageClient
-     * @param \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToPriceProductClientInterface $priceProductClient
-     * @param \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToPriceProductStorageClientInterface $priceProductStorageClient
-     * @param \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToMerchantStorageClientInterface $merchantStorageClient
-     * @param \SprykerShop\Yves\MerchantProductWidget\Mapper\MerchantProductMapper $merchantProductWidgetMapper
-     */
     public function __construct(
         MerchantProductWidgetToProductStorageClientInterface $productStorageClient,
         MerchantProductWidgetToPriceProductClientInterface $priceProductClient,
@@ -82,12 +75,6 @@ class MerchantProductReader implements MerchantProductReaderInterface
         $this->merchantProductWidgetMapper = $merchantProductWidgetMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     * @param string $localeName
-     *
-     * @return \Generated\Shared\Transfer\MerchantProductViewTransfer|null
-     */
     public function findMerchantProductView(ProductViewTransfer $productViewTransfer, string $localeName): ?MerchantProductViewTransfer
     {
         if (!$productViewTransfer->getIdProductConcrete()) {
@@ -142,12 +129,6 @@ class MerchantProductReader implements MerchantProductReaderInterface
         return $merchantProductViewTransfer;
     }
 
-    /**
-     * @param string $sku
-     * @param string $locale
-     *
-     * @return string|null
-     */
     public function findMerchantReferenceByConcreteSku(string $sku, string $locale): ?string
     {
         $productConcreteStorageData = $this->productStorageClient
@@ -174,12 +155,6 @@ class MerchantProductReader implements MerchantProductReaderInterface
         return $productAbstractStorageData[static::PARAM_MERCHANT_REFERENCE];
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\MerchantStorageTransfer $merchantStorageTransfer
-     * @param string $localeName
-     *
-     * @return string
-     */
     protected function getResolvedUrl(MerchantStorageTransfer $merchantStorageTransfer, string $localeName): string
     {
         $locale = strstr($localeName, '_', true);

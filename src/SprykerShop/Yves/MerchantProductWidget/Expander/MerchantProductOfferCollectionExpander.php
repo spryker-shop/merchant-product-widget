@@ -30,11 +30,6 @@ class MerchantProductOfferCollectionExpander implements MerchantProductOfferColl
      */
     private $shopContextResolver;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToMerchantStorageClientInterface $merchantStorageClient
-     * @param \SprykerShop\Yves\MerchantProductWidget\Reader\MerchantProductReaderInterface $merchantProductReader
-     * @param \SprykerShop\Yves\MerchantProductWidget\Resolver\ShopContextResolverInterface $shopContextResolver
-     */
     public function __construct(
         MerchantProductWidgetToMerchantStorageClientInterface $merchantStorageClient,
         MerchantProductReaderInterface $merchantProductReader,

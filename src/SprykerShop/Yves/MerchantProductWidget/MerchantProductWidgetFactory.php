@@ -26,9 +26,6 @@ use SprykerShop\Yves\MerchantProductWidget\Resolver\ShopContextResolverInterface
 
 class MerchantProductWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Reader\MerchantProductReaderInterface
-     */
     public function createMerchantProductReader(): MerchantProductReaderInterface
     {
         return new MerchantProductReader(
@@ -40,9 +37,6 @@ class MerchantProductWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Expander\MerchantProductExpanderInterface
-     */
     public function createMerchantProductExpander(): MerchantProductExpanderInterface
     {
         return new MerchantProductExpander(
@@ -50,17 +44,11 @@ class MerchantProductWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Mapper\MerchantProductMapper
-     */
     public function createMerchantProductMapper(): MerchantProductMapper
     {
         return new MerchantProductMapper();
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Expander\QuickOrder\MerchantProductQuickOrderItemExpanderInterface
-     */
     public function createMerchantProductQuickOrderItemExpander(): MerchantProductQuickOrderItemExpanderInterface
     {
         return new MerchantProductQuickOrderItemExpander(
@@ -68,49 +56,31 @@ class MerchantProductWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Resolver\ShopContextResolverInterface
-     */
     public function createShopContextResolver(): ShopContextResolverInterface
     {
         return new ShopContextResolver($this->getContainer());
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToMerchantStorageClientInterface
-     */
     public function getMerchantStorageClient(): MerchantProductWidgetToMerchantStorageClientInterface
     {
         return $this->getProvidedDependency(MerchantProductWidgetDependencyProvider::CLIENT_MERCHANT_STORAGE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToProductStorageClientInterface
-     */
     public function getProductStorageClient(): MerchantProductWidgetToProductStorageClientInterface
     {
         return $this->getProvidedDependency(MerchantProductWidgetDependencyProvider::CLIENT_PRODUCT_STORAGE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToPriceProductClientInterface
-     */
     public function getPriceProductClient(): MerchantProductWidgetToPriceProductClientInterface
     {
         return $this->getProvidedDependency(MerchantProductWidgetDependencyProvider::CLIENT_PRICE_PRODUCT);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Dependency\Client\MerchantProductWidgetToPriceProductStorageClientInterface
-     */
     public function getPriceProductStorageClient(): MerchantProductWidgetToPriceProductStorageClientInterface
     {
         return $this->getProvidedDependency(MerchantProductWidgetDependencyProvider::CLIENT_PRICE_PRODUCT_STORAGE);
     }
 
-    /**
-     * @return \SprykerShop\Yves\MerchantProductWidget\Expander\MerchantProductOfferCollectionExpanderInterface
-     */
     public function createMerchantProductOfferCollectionExpander(): MerchantProductOfferCollectionExpanderInterface
     {
         return new MerchantProductOfferCollectionExpander(

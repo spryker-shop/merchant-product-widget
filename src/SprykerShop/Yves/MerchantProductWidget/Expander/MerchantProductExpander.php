@@ -23,9 +23,6 @@ class MerchantProductExpander implements MerchantProductExpanderInterface
      */
     protected $merchantProductReader;
 
-    /**
-     * @param \SprykerShop\Yves\MerchantProductWidget\Reader\MerchantProductReaderInterface $merchantProductReader
-     */
     public function __construct(MerchantProductReaderInterface $merchantProductReader)
     {
         $this->merchantProductReader = $merchantProductReader;

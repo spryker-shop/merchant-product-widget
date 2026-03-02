@@ -15,11 +15,6 @@ use Spryker\Yves\Kernel\Widget\AbstractWidget;
  */
 class MerchantProductWidget extends AbstractWidget
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     * @param bool $isRadioButtonVisible
-     * @param bool $isChecked
-     */
     public function __construct(
         ProductViewTransfer $productViewTransfer,
         bool $isRadioButtonVisible = false,
@@ -31,27 +26,16 @@ class MerchantProductWidget extends AbstractWidget
         $this->addIsCheckedParameter($isChecked);
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'MerchantProductWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@MerchantProductWidget/views/merchant-product-widget/merchant-product-widget.twig';
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return void
-     */
     protected function addMerchantProductViewParameter(ProductViewTransfer $productViewTransfer): void
     {
         $this->addParameter(
@@ -60,31 +44,16 @@ class MerchantProductWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return void
-     */
     protected function addProductViewParameter(ProductViewTransfer $productViewTransfer): void
     {
         $this->addParameter('productView', $productViewTransfer);
     }
 
-    /**
-     * @param bool $isRadioButtonVisible
-     *
-     * @return void
-     */
     protected function addIsRadioButtonVisibleParameter(bool $isRadioButtonVisible): void
     {
         $this->addParameter('isRadioButtonVisible', $isRadioButtonVisible);
     }
 
-    /**
-     * @param bool $isChecked
-     *
-     * @return void
-     */
     protected function addIsCheckedParameter(bool $isChecked): void
     {
         $this->addParameter('isChecked', $isChecked);
