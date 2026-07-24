@@ -17,15 +17,11 @@ use SprykerShop\Yves\QuickOrderPageExtension\Dependency\Plugin\QuickOrderItemExp
 class MerchantProductQuickOrderItemExpanderPlugin extends AbstractPlugin implements QuickOrderItemExpanderPluginInterface
 {
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Expands provided ItemTransfer with additional data.
      * - Executed before adding quick order items into cart.
      *
      * @api
-     *
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
      */
     public function expandItem(ItemTransfer $itemTransfer): ItemTransfer
     {
